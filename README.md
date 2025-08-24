@@ -31,3 +31,35 @@
 .venv/
 venv/
 ```
+
+- Antes de rodar o projeto ativei o ambiente virtual venv:
+
+`source .venv/bin/activate`
+
+- Em seguida instalei o flask dentro do ambiente:
+
+`pip install flask`
+
+- Por último rodei o projeto:
+
+`python3 app.py`
+
+- Obs: No caso do windows posso ativar o ambiente do venv com o comando:
+
+`.venv\Scripts\activate`
+
+- Para desativar o ambiente basta rodar: deactivate;
+
+- Obs: O ambiente está ativado ou desativado quando aparece (.venv), se aparecer apenas .venv é apenas uma customização do prompt;
+
+- Após ativar o ambiente posso acessar a aplicação pelo navegador utilizando http://127.0.0.1:5000 ou via postman, httpie, insomnia colando o mesmo link com o número da porta e deve aparecer:
+
+```bash * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 180-716-632
+```
