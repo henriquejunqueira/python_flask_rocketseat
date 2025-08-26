@@ -38,5 +38,18 @@ def delete_product(product_id): # Define a função que a rota de remoção irá
         return jsonify({"message": "Product deleted successfully"}) # Retorna a mensagem de sucesso como json
     return jsonify({"message": "Product not found"}) , 404 # Se não existe, retorna o erro 404 not found
 
+@app.route('/api/products/<int:product_id>', methods=["GET"]) # Define a rota de listagem de um produto
+def get_product_details(product_id): # Define a função que a rota de listagem de produtos irá executar
+    product = Product.query.get(product_id) # Recupera o produto do banco de dados
+    # Verifica se o produto existe
+    if product: # Se exite, o dado é recuperado do banco de dados
+        return jsonify({ # retorna os dados recuperados como json
+            "id": product.id,
+            "nome": product.name,
+            "price": product.price,
+            "description": product.description
+        })
+    return jsonify({"message": "Product not found"}), 404
+
 if __name__ == "__main__": # Verifica se o arquivo está sendo executado diretamente ou importado por outro arquivo
     app.run(debug=True) # Executa a aplicação utilizando o modo debug
