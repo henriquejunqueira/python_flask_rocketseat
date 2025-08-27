@@ -63,6 +63,7 @@ Press CTRL+C to quit
  * Debugger is active!
  * Debugger PIN: 180-716-632
 ```
+#### Criando o banco de dados:
 
 - Criando o banco de dados via terminal:
 - `flask shell`
@@ -70,3 +71,12 @@ Press CTRL+C to quit
 - `exit()`
 
 - Após rodar esses comandos no terminal é criada a pasta instance com o arquivo de banco de dados dentro dela
+
+#### Alterando o banco de dados para inserir agora a tabela user:
+
+- Criando a tabela user via terminal:
+- `flask shell`
+- `db.drop_all()`
+- `db.create_all()`
+- `db.session.commit()`
+- `exit()`
